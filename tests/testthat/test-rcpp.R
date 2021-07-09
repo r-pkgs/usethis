@@ -4,6 +4,7 @@ test_that("use_rcpp() requires a package", {
 })
 
 test_that("use_rcpp() creates files/dirs, edits DESCRIPTION and .gitignore", {
+  skip_if_not_installed("roxygen2")
   pkg <- create_local_package()
   use_roxygen_md()
 
@@ -17,6 +18,7 @@ test_that("use_rcpp() creates files/dirs, edits DESCRIPTION and .gitignore", {
 })
 
 test_that("use_rcpp_armadillo() creates Makevars files and edits DESCRIPTION", {
+  skip_if_not_installed("mockr")
   create_local_package()
   use_roxygen_md()
 
@@ -32,6 +34,7 @@ test_that("use_rcpp_armadillo() creates Makevars files and edits DESCRIPTION", {
 })
 
 test_that("use_rcpp_eigen() edits DESCRIPTION", {
+  skip_if_not_installed("mockr")
   create_local_package()
   use_roxygen_md()
 
@@ -44,6 +47,7 @@ test_that("use_rcpp_eigen() edits DESCRIPTION", {
 })
 
 test_that("use_src() doesn't message if not needed", {
+  skip_if_not_installed("roxygen2")
   create_local_package()
   use_roxygen_md()
   use_package_doc()

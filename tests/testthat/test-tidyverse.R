@@ -13,6 +13,7 @@ test_that("use_tidy_description() alphabetises dependencies and remotes", {
 })
 
 test_that("use_tidy_dependencies() isn't overly informative", {
+  skip_if_not_installed("roxygen2")
   create_local_package(fs::path_temp("tidydeps"))
   use_package_doc()
   withr::local_options(usethis.quiet = FALSE)
@@ -30,6 +31,7 @@ test_that("use_tidy_eval() inserts the template file and Imports rlang", {
 })
 
 test_that("use_tidy_GITHUB-STUFF() adds and Rbuildignores files", {
+  skip_if_not_installed("mockr")
   local_interactive(FALSE)
   create_local_package()
   use_git()
@@ -50,6 +52,7 @@ test_that("use_tidy_GITHUB-STUFF() adds and Rbuildignores files", {
 })
 
 test_that("use_tidy_github() adds and Rbuildignores files", {
+  skip_if_not_installed("mockr")
   local_interactive(FALSE)
   create_local_package()
   use_git()
